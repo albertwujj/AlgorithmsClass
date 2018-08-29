@@ -13,6 +13,8 @@ struct Node {
     Node *next;
 };
 
+using std::cout;
+
 int main(void){
     Node *head = NULL;
     Node *curr = NULL;
@@ -30,8 +32,8 @@ int main(void){
         int minNumI = -1;
         bool firstNum = false;
         int i = 0;
-
         std::string line;
+
         while(std::getline(input, line)) {
             int num = 0;
             std::istringstream iss(line);
@@ -43,6 +45,7 @@ int main(void){
             }
             i++;
         }
+
         if(!firstNum) {
             // all numbers have already been chosen
             break;
@@ -94,16 +97,19 @@ int main(void){
     for(int k = 0; k < medI - 1; k++) {
         curr = curr->next;
     }
-
-    double med = (double) curr->next->data;
-    if(needAverage) {
-        double prev = (double) curr->data;
-        med = (double) (prev+med) / 2;
+    double med = 0.0;
+    if(size == 1) {
+        med = curr->data;
+    } else {
+        med = (double) curr->next->data;
+        if(needAverage) {
+            double prev = (double) curr->data;
+            med = (double) (prev+med) / 2;
+        }
     }
     double time_med = endTimer(start);
     std::cout << "med: " << med << "\n";
     std::cout << "time_med: " << time_med << "\n";
-
 }
 timespec startTimer() {
     timespec *start = new timespec();
