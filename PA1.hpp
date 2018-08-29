@@ -8,8 +8,6 @@
 #ifndef PA1_hpp
 #define PA1_hpp
 
-#define _POSIX_C_SOURCE 200809L
-
 #include <unordered_set>
 #include <stdio.h>
 #include <iostream>
