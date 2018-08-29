@@ -19,12 +19,12 @@ int main(void){
     std::ifstream input("input.txt");
     std::unordered_set<int> alreadyChosen;
 
-    clock_t t;
-    t = clock();
+    timespec start = startTimer();
 
     int size = 0;
     int j = 0;
-    
+
+
     while(true) {
         int minNum = -1;
         int minNumI = -1;
@@ -67,39 +67,53 @@ int main(void){
         j++;
     }
 
-    std::cout << "\n" << "All times are in seconds" << "\n\n";
+    std::cout << "\n" << "All times are in milliseconds" << "\n\n";
 
-    float time_insert = (float) (clock() - t) / CLOCKS_PER_SEC;
+    double time_insert = endTimer(start);
     std::cout << "time_insert: " << time_insert << "\n";
-    t = clock();
-    
+
+    start = startTimer();
     int min = head->data;
-    float time_min = (float) (clock() - t) / CLOCKS_PER_SEC;
+    double time_min = endTimer(start);
     std::cout << "min: " << min << "\n";
     std::cout << "time_min: " << time_min << "\n";
-    t = clock();
 
+    start = startTimer();
     int max = curr->data;
-    float time_max = (float) (clock() - t) / CLOCKS_PER_SEC;
+    double time_max = endTimer(start);
     std::cout << "max: " << max << "\n";
     std::cout << "time_max: " << time_max << "\n";
-    t = clock();
 
+    start = startTimer();
     int medI = size / 2;
     bool needAverage = false;
-    if (size % 2 != 0) {
+    if (size % 2 == 0) {
         needAverage = true;
     }
     curr = head;
-    for(int k = 0; k < medI; k++) {
+    for(int k = 0; k < medI - 1; k++) {
         curr = curr->next;
     }
-    int med = curr->data;
+
+    double med = (double) curr->next->data;
     if(needAverage) {
-        med = (curr->next->data + med) / 2;
+        double prev = (double) curr->data;
+        med = (double) (prev+med) / 2;
     }
-    float time_med = (float) (clock() - t) / CLOCKS_PER_SEC;
+    double time_med = endTimer(start);
     std::cout << "med: " << med << "\n";
     std::cout << "time_med: " << time_med << "\n";
+
+}
+timespec startTimer() {
+    timespec *start = new timespec();
+    clock_gettime(CLOCK_REALTIME, start);
+    return *start;
 }
 
+double endTimer(timespec &start) {
+    timespec *end = new timespec();
+    clock_gettime(CLOCK_REALTIME, end);
+    // find diff in milliseconds
+    return (end->tv_sec - start.tv_sec) * 1000000 + (end->tv_nsec - start.tv_nsec) / 1000;
+}

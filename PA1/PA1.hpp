@@ -18,4 +18,8 @@
 #include <inttypes.h>
 #include <math.h>
 
+timespec startTimer();
+double endTimer(timespec &start);
+
 #endif /* PA1_hpp */
+
