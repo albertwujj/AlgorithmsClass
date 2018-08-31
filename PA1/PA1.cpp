@@ -25,14 +25,14 @@ int main(void){
 
     std::vector<int> vector;
     std::string line;
-
+    Node *curr = head;
     while(std::getline(input, line)) {
         int num = 0;
         std::istringstream iss(line);
         iss >> num;
         Node* newNode = new Node;
         newNode->data = num;
-        Node *curr = head;
+        curr = head;
         while (curr->next != NULL && curr->next->data < num) {
             curr = curr->next;
         }
