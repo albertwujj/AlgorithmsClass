@@ -71,6 +71,7 @@ int main(void){
             size = i;
         }
         j++;
+        cout << "Integers inserted: " << j;
     }
 
     std::cout << "\n" << "All times are in milliseconds" << "\n\n";
