@@ -29,6 +29,7 @@ int main(void){
     int j = 0;
 
     std::vector<int> vector;
+    std::string line;
     while(std::getline(input, line)) {
         int num = 0;
         std::istringstream iss(line);
@@ -36,7 +37,7 @@ int main(void){
         vector.push_back(num);
     }
 
-    end = vector.size()
+    int end = vector.size();
     while(end != 0) {
         int minNum = -1;
         int minNumI = -1;
