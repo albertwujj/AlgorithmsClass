@@ -17,7 +17,7 @@ using std::cout;
 
 int main(void){
 
-    setbuf(stdout, NULL);
+    //setbuf(stdout, NULL);
 
     Node *head = NULL;
     Node *curr = NULL;
