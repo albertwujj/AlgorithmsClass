@@ -40,8 +40,9 @@ int main(void){
         bool firstNum = false;
 
         int i = 0;
+        int num = -1;
         while(i < end) {
-            int num = 0;
+            num = vector.at(i);
             if (num < minNum || !firstNum) {
                 minNum = num;
                 minNumI = i;
