@@ -7,17 +7,16 @@
 
 #include "PA1.hpp"
 
+using std::cout;
+using std::vector;
 
 struct Node {
     int data;
     Node *next;
 };
 
-using std::cout;
-
 int main(void){
 
-    //setbuf(stdout, NULL);
     cout << "first";
 
     Node *head = NULL;
@@ -30,19 +29,24 @@ int main(void){
     int size = 0;
     int j = 0;
 
+    std::vector<int> vector;
+    while(std::getline(input, line)) {
+        int num = 0;
+        std::istringstream iss(line);
+        iss >> num;
+        vector.push_back(num);
+    }
 
-    while(true) {
+    end = vector.size()
+    while(end != 0) {
         int minNum = -1;
         int minNumI = -1;
         bool firstNum = false;
-        int i = 0;
-        std::string line;
 
-        while(std::getline(input, line)) {
+        int i = 0;
+        while(i < end) {
             int num = 0;
-            std::istringstream iss(line);
-            iss >> num;
-            if (alreadyChosen.find(i) == alreadyChosen.end() && (num < minNum || !firstNum)) {
+            if (num < minNum || !firstNum) {
                 minNum = num;
                 minNumI = i;
                 firstNum = true;
@@ -50,12 +54,9 @@ int main(void){
             i++;
         }
 
-        if(!firstNum) {
-            // all numbers have already been chosen
-            break;
-        }
+        swap(vector.at(numI), vector.at(end - 1));
+        end--;
 
-        alreadyChosen.insert(minNumI);
         Node* newNode = new Node;
         newNode->data = minNum;
         if (head == NULL) {
@@ -72,7 +73,9 @@ int main(void){
             size = i;
         }
         j++;
-        cout << "Integers inserted: " << j;
+        if (j % 100 == 0) {
+            cout << "Integers inserted: " << j < "\n";
+        }
     }
 
     std::cout << "\n" << "All times are in milliseconds" << "\n\n";
@@ -116,6 +119,13 @@ int main(void){
     std::cout << "med: " << med << "\n";
     std::cout << "time_med: " << time_med << "\n";
 }
+
+void swap(int &x, int &y) {
+    int temp = x;
+    x = y;
+    y = temp;
+}
+
 timespec startTimer() {
     timespec *start = new timespec();
     clock_gettime(CLOCK_REALTIME, start);
