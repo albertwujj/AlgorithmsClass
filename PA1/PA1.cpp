@@ -15,13 +15,9 @@ struct Node {
 };
 
 int main(void){
-
-    cout << "first";
-
     Node *head = NULL;
     Node *curr = NULL;
     std::ifstream input("input.txt");
-    std::unordered_set<int> alreadyChosen;
 
     timespec start = startTimer();
 
