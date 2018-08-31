@@ -16,62 +16,32 @@ struct Node {
 
 int main(void){
     Node *head = NULL;
-    Node *curr = NULL;
+
     std::ifstream input("input.txt");
 
     timespec start = startTimer();
 
     int size = 0;
-    int j = 0;
 
     std::vector<int> vector;
     std::string line;
+
     while(std::getline(input, line)) {
         int num = 0;
         std::istringstream iss(line);
         iss >> num;
-        vector.push_back(num);
-    }
-
-    int end = vector.size();
-    while(end != 0) {
-        int minNum = -1;
-        int minNumI = -1;
-        bool firstNum = false;
-
-        int i = 0;
-        int num = -1;
-        while(i < end) {
-            num = vector.at(i);
-            if (num < minNum || !firstNum) {
-                minNum = num;
-                minNumI = i;
-                firstNum = true;
-            }
-            i++;
-        }
-
-        swap(vector.at(minNumI), vector.at(end - 1));
-        end--;
-
         Node* newNode = new Node;
-        newNode->data = minNum;
-        if (head == NULL) {
-            head = newNode;
-            curr = head;
-        } else {
-            curr->next = newNode;
+        newNode->data = num;
+        Node *curr = head;
+        while (curr->next != NULL && curr->next->data < num) {
             curr = curr->next;
         }
-        // go back to beginning of file
-        input.clear();
-        input.seekg(0, std::ios::beg);
-        if(j==0) {
-            size = i;
-        }
-        j++;
-        if (j % 100 == 0) {
-            cout << "Integers inserted: " << j << "\n";
+        Node* temp = curr->next;
+        curr->next = newNode;
+        newNode->next = temp;
+        size++;
+        if (size % 100 == 0) {
+            cout << "Integers inserted: " << size << "\n";
         }
     }
 
