@@ -18,6 +18,7 @@ using std::cout;
 int main(void){
 
     //setbuf(stdout, NULL);
+    cout << "first";
 
     Node *head = NULL;
     Node *curr = NULL;
