@@ -54,7 +54,7 @@ int main(void){
             i++;
         }
 
-        swap(vector.at(numI), vector.at(end - 1));
+        swap(vector.at(minNumI), vector.at(end - 1));
         end--;
 
         Node* newNode = new Node;
@@ -74,7 +74,7 @@ int main(void){
         }
         j++;
         if (j % 100 == 0) {
-            cout << "Integers inserted: " << j < "\n";
+            cout << "Integers inserted: " << j << "\n";
         }
     }
 
