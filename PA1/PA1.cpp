@@ -17,6 +17,8 @@ using std::cout;
 
 int main(void){
 
+    setbuf(stdout, NULL);
+
     Node *head = NULL;
     Node *curr = NULL;
     std::ifstream input("input.txt");
