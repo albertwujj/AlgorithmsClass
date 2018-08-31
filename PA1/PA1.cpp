@@ -8,7 +8,6 @@
 #include "PA1.hpp"
 
 using std::cout;
-using std::vector;
 
 struct Node {
     int data;

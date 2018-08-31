@@ -17,7 +17,9 @@
 #include <time.h>
 #include <inttypes.h>
 #include <math.h>
+#include <vector>
 
+void swap(int &x, int &y);
 timespec startTimer();
 double endTimer(timespec &start);
 
