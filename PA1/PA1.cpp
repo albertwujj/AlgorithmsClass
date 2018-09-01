@@ -11,7 +11,7 @@ using std::cout;
 
 struct Node {
     int data;
-    Node *next;
+    Node *next = NULL;
 };
 
 int main(void){
