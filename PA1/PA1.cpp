@@ -11,7 +11,7 @@ using std::cout;
 
 struct Node {
     int data;
-    Node *next = NULL;
+    Node *next;
 };
 
 int main(void){
@@ -22,14 +22,14 @@ int main(void){
     timespec start = startTimer();
 
     //head starts as an extra node to remove corner cases relating to first item, will be removed after loop
-    Node *head = new Node;
+    Node *head = new Node();
     int size = 0;
     std::string line;
     while(std::getline(input, line)) {
         int num = 0;
         std::istringstream iss(line);
         iss >> num;
-        Node *newNode = new Node;
+        Node *newNode = new Node();
         newNode->data = num;
         Node* curr = head;
         while (curr->next != NULL && curr->next->data < num) {
