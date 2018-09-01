@@ -8,7 +8,6 @@
 #ifndef PA1_hpp
 #define PA1_hpp
 
-#include <unordered_set>
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
@@ -17,7 +16,6 @@
 #include <time.h>
 #include <inttypes.h>
 #include <math.h>
-#include <vector>
 
 void swap(int &x, int &y);
 timespec startTimer();
