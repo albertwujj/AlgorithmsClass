@@ -15,24 +15,23 @@ struct Node {
 };
 
 int main(void){
-    Node *head = NULL;
+
 
     std::ifstream input("input.txt");
 
     timespec start = startTimer();
 
+    //head starts as an extra node to remove corner cases relating to first item, will be removed after loop
+    Node *head = new Node;
     int size = 0;
-
-    std::vector<int> vector;
     std::string line;
-    Node *curr = head;
     while(std::getline(input, line)) {
         int num = 0;
         std::istringstream iss(line);
         iss >> num;
-        Node* newNode = new Node;
+        Node *newNode = new Node;
         newNode->data = num;
-        curr = head;
+        Node* curr = head;
         while (curr->next != NULL && curr->next->data < num) {
             curr = curr->next;
         }
@@ -44,7 +43,7 @@ int main(void){
             cout << "Integers inserted: " << size << "\n";
         }
     }
-
+    head = head->next;
     std::cout << "\n" << "All times are in milliseconds" << "\n\n";
 
     double time_insert = endTimer(start);
@@ -57,18 +56,12 @@ int main(void){
     std::cout << "time_min: " << time_min << "\n";
 
     start = startTimer();
-    int max = curr->data;
-    double time_max = endTimer(start);
-    std::cout << "max: " << max << "\n";
-    std::cout << "time_max: " << time_max << "\n";
-
-    start = startTimer();
     int medI = size / 2;
     bool needAverage = false;
     if (size % 2 == 0) {
         needAverage = true;
     }
-    curr = head;
+    Node *curr = head;
     for(int k = 0; k < medI - 1; k++) {
         curr = curr->next;
     }
@@ -85,6 +78,15 @@ int main(void){
     double time_med = endTimer(start);
     std::cout << "med: " << med << "\n";
     std::cout << "time_med: " << time_med << "\n";
+
+    start = startTimer();
+    while (curr->next != NULL) {
+        curr = curr->next;
+    }
+    int max = curr->data;
+    double time_max = endTimer(start);
+    std::cout << "max: " << max << "\n";
+    std::cout << "time_max: " << time_max << "\n";
 }
 
 void swap(int &x, int &y) {
