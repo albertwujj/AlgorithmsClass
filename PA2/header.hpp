@@ -16,6 +16,7 @@
 #include <vector>
 
 using std::vector;
+using std::string;
 
 int maxSubSum1( const vector<int> & a );
 int maxSubSum2( const vector<int> & a );
@@ -25,5 +26,7 @@ int max3(int one, int two, int three) ;
 int maxSubSum4( const vector<int> & a );
 timespec startTimer();
 double endTimer(timespec &start);
+double handleAlgo(string algoName, int (*algoFunc)(const vector<int> &), const vector<int> & vec);
+void writeToCSV();
 
 #endif /* header_hpp */
