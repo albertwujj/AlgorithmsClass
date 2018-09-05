@@ -1,5 +1,6 @@
 #include "header.hpp"
 
+using std::vector;
 
 /*
  Code taken from: Data structures and algorithm analysis in c++, by Mark Allen Weiss (except max3())
@@ -9,7 +10,7 @@
  * Cubic maximum contiguous subsequence sum algorithm.
  */
 
-int maxSubSum1( const vector<int> & a )
+int maxSubSum1( const std::vector<int> & a )
 {
     int maxSum = 0;
 
@@ -91,7 +92,7 @@ int maxSubSum3( const vector<int> & a )
 }
 
 int max3(int one, int two, int three) {
-    return std::max(one, std::max(two,three))
+    return std::max(one, std::max(two,three));
 }
 
 /**
