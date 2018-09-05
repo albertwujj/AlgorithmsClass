@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
     char *filename = argv[1];
     std::ifstream infile(filename);
     std::string line;
-    vector<int> vec;
+    vector<int> vec; //the array to be sorted
     while(getline(infile, line)) {
         int num = 0;
         std::istringstream iss(line);
