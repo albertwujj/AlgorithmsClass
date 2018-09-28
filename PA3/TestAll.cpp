@@ -29,7 +29,9 @@ times timeEither(int N, int M) {
     }
     double totalTime = endTimer(startTotal);
     elimTime /= (N - 1); //get average
-    times timing = {.total = totalTime, .elim = elimTime };
+    times timing;
+    timing.total = totalTime;
+    timing.elim = elimTime;
     return timing;
 }
 

@@ -1,4 +1,3 @@
-
 //
 //  TestVectorMyJosephus.cpp
 //
@@ -20,8 +19,8 @@ void testVector(int N, int M) {
         l.printAll();
     }
     cout << "Elim sequence: ";
-    for (auto p: elimSeq) {
-        cout << p.getID() << " ";
+    for (auto it = elimSeq.begin(); it != elimSeq.end(); ++it) {
+        cout << it->getID() << " ";
     }
     cout << "Winner: ";
     l.printAll();
