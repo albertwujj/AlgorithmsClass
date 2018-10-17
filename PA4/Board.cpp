@@ -71,7 +71,7 @@ bool Board::moveTo(int id, int x_new, int y_new) {
         return false;
     }
     //check for move along row, column, or diagonal
-    if (x != x_new && y != y_new && std::abs( (int) (x-x_new)) !=  std::abs((int) (y-y_new))) {
+    if (x != x_new && y != y_new && std::abs(x-x_new) != std::abs(y-y_new)) {
         cout << "Error: invalid movement for id " << id << endl;
         return false;
     }
