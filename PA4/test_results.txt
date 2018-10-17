@@ -1,0 +1,138 @@
+Error: id 3 already exists
+Error: position already occupied for insert id: 10
+Printing by ID:
+ID: 1
+(x,y): (3,2)
+
+ID: 2
+(x,y): (4,3)
+
+ID: 3
+(x,y): (4,6)
+
+ID: 4
+(x,y): (9,3)
+
+ID: 5
+(x,y): (6,3)
+
+ID: 6
+(x,y): (8,2)
+
+ID: 8
+(x,y): (9,8)
+
+Printing by ID:
+ID: 1
+(x,y): (3,2)
+
+ID: 2
+(x,y): (4,3)
+
+ID: 3
+(x,y): (4,6)
+
+ID: 4
+(x,y): (9,8)
+
+ID: 5
+(x,y): (6,3)
+
+ID: 6
+(x,y): (8,2)
+
+Error: invalid movement for id 4
+Printing by ID:
+ID: 1
+(x,y): (3,2)
+
+ID: 2
+(x,y): (4,3)
+
+ID: 3
+(x,y): (4,6)
+
+ID: 4
+(x,y): (9,8)
+
+ID: 5
+(x,y): (6,3)
+
+ID: 6
+(x,y): (8,2)
+
+Printing by ID:
+ID: 1
+(x,y): (3,2)
+
+ID: 2
+(x,y): (3,3)
+
+ID: 3
+(x,y): (4,6)
+
+ID: 4
+(x,y): (9,8)
+
+ID: 5
+(x,y): (6,3)
+
+ID: 6
+(x,y): (8,2)
+
+Printing by ID:
+ID: 2
+(x,y): (3,3)
+
+ID: 3
+(x,y): (4,6)
+
+ID: 4
+(x,y): (3,2)
+
+ID: 5
+(x,y): (6,3)
+
+ID: 6
+(x,y): (8,2)
+
+Printing by ID:
+ID: 2
+(x,y): (3,3)
+
+ID: 3
+(x,y): (4,6)
+
+ID: 4
+(x,y): (8,2)
+
+ID: 5
+(x,y): (6,3)
+
+Printing by ID:
+ID: 3
+(x,y): (4,6)
+
+ID: 4
+(x,y): (8,2)
+
+ID: 5
+(x,y): (3,3)
+
+Printing by ID:
+ID: 4
+(x,y): (4,6)
+
+ID: 5
+(x,y): (3,3)
+
+Printing by ID:
+ID: 4
+(x,y): (4,6)
+
+ID: 5
+(x,y): (4,3)
+
+Printing by ID:
+ID: 4
+(x,y): (4,3)
